@@ -1,13 +1,9 @@
 rows, columns = 3, 3
-row = []
-grid=[]
-num=0
+grid = []
+
 for r in range(rows):
-    for c in range(columns):
-        num += 1
-        row.append(num)
+    row = list(map(int, input().split()))
+    grid.append(row)
+
+for row in grid:
     print(row)
-    row=[]
-
-
-
