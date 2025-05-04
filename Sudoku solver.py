@@ -5,23 +5,18 @@ grid = []
 #takes input of the box
 for r in range(rows):
     number=input()
-    row = list(map(int,number))
+    row = list(number)
     grid.append(row)
 
 
-x,y=2,0
 
 
-for row in grid:
-    compare = grid[x][y]
-    for n in row:
-       if n == compare:
-           print("yes")
-       else:
-           print("no")
-    print(row)
-    y += 1
-    print (y)
-    print(compare)
-    print (x)
+for x in range(rows):
+   for y in range(columns):
+       compare = grid[x][y]
+       print(compare)
 
+       for x1 in range(rows):
+           for y1 in range(columns):
+              current= grid [x1][y1]
+              print(current)
