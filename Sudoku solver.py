@@ -1,22 +1,35 @@
+def check(lst):
+    required= set(range(1, 10))
+    input_set = set(lst)
+    missing_numbers = required - input_set
+    if missing_numbers:
+        return missing_numbers
+    else:
+       return True
+
+
+
+
+
 #initialises the grid and its structure
-rows, columns = 3, 3
+rows, columns = 2,9
 grid = []
 
 #takes input of the box
 for r in range(rows):
     number=input()
-    row = list(number)
+    new= number.replace(" ","0")
+    print(new)
+    row = list(map(int, list(new)))
+
     grid.append(row)
 
+print(grid)
 
+for row in grid:
+    result=check(row)
+    print(result)
 
-
-for x in range(rows):
-   for y in range(columns):
-       compare = grid[x][y]
-       print(compare)
-
-       for x1 in range(rows):
-           for y1 in range(columns):
-              current= grid [x1][y1]
-              print(current)
+for columns in grid:
+    result=check(columns)
+    print(result)
