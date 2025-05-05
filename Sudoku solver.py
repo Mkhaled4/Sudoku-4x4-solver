@@ -7,13 +7,24 @@ def check(lst):
     else:
        return True
 
-def solv1(lst,y):
-    required = [1, 2, 3, 4]
-    input_set = lst
-    for item in required:
-        if not item in input_set:
-            input_set[y]= item
-            return input_set
+def solv1(lst):
+    print(lst)
+    required = set(range(1, 5))
+    input_set = set(lst)
+    missing_numbers = required - input_set
+    print(missing_numbers)
+    final_lst = [missing_numbers if x == 0 else x for x in lst]
+    return final_lst
+
+def solv2(lst):
+    print(lst)
+    required = set(range(1, 5))
+    input_set = set(lst)
+    missing_numbers = required - input_set
+    print(missing_numbers)
+    final_lst = [missing_numbers if x == 0 else x for x in lst]
+    return final_lst
+
 
 
 rows, columns = 4,4
@@ -48,7 +59,15 @@ for row in column:
 for x in range(len(grid)):
     for y in range(len(grid[0])):
         if grid[x].count(0) == 1:
-           grid[x][y]= 0
-           grid[x] = solv1(grid[x],y)
+           grid[x] = solv1(grid[x])
 
-print(grid)
+        if column[x].count(0) == 1:
+           column[x] = solv1(column[x])
+
+        if grid[x].count(0) == 2:
+           grid[x] = solv2(grid[x])
+
+
+print(column)
+
+
