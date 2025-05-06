@@ -8,22 +8,46 @@ def check(lst):
        return True
 
 def solv1(lst):
-    print(lst)
+
     required = set(range(1, 5))
     input_set = set(lst)
     missing_numbers = required - input_set
-    print(missing_numbers)
-    final_lst = [missing_numbers if x == 0 else x for x in lst]
+    update_miss=list(missing_numbers)
+    final_lst = [update_miss[0] if x == 0 else x for x in lst]
     return final_lst
 
-def solv2(lst):
-    print(lst)
-    required = set(range(1, 5))
-    input_set = set(lst)
-    missing_numbers = required - input_set
-    print(missing_numbers)
-    final_lst = [missing_numbers if x == 0 else x for x in lst]
-    return final_lst
+
+
+def answer(grid1, column1):
+    grid_1d = [element for sublist in grid1 for element in sublist]
+    column_1d = [element for sublist in column1 for element in sublist]
+
+    if 0 not in grid_1d and 0 not in column_1d:
+        return grid1,column1
+    else:
+
+        for x in range(len(grid1)):
+            for y in range(len(grid1[0])):
+                x_val = []
+                y_val = []
+                if grid1[x][y] == 0 and grid1[x].count(0) == 1:
+                    x_val.append(x)
+                    y_val.append(y)
+                    grid1[x] = solv1(grid1[x])
+                    column1[y_val[0]][x_val[0]] = grid1[x_val[0]][y_val[0]]
+                    return answer(grid1, column1)
+
+                elif column1[x][y] == 0 and column1[x].count(0) == 1:
+                    x_val.append(x)
+                    y_val.append(y)
+                    column1[x] = solv1(column1[x])
+                    grid1[y_val[0]][x_val[0]] = column1[x_val[0]][y_val[0]]
+                    return answer(grid1, column1)
+
+
+
+
+
 
 
 
@@ -55,19 +79,7 @@ for col_index in range(4):
 for row in column:
     result=check(row)
 
+f_grid,f_column = answer(grid,column)
 
-for x in range(len(grid)):
-    for y in range(len(grid[0])):
-        if grid[x].count(0) == 1:
-           grid[x] = solv1(grid[x])
-
-        if column[x].count(0) == 1:
-           column[x] = solv1(column[x])
-
-        if grid[x].count(0) == 2:
-           grid[x] = solv2(grid[x])
-
-
-print(column)
-
+print(f_grid)
 
