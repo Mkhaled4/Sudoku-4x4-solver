@@ -1,1 +1,1 @@
-This is a project that takes in sudoku and solves it 
+This is a project that takes in a 4x4 sudoku and solves it using recursion
