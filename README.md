@@ -1,6 +1,9 @@
 # **Sudoku 4x4 solver using python**🧠🔍
 This solver takes the 4x4 sudoku puzzle and uses algorithms to solve the blank spaces
 
+# Aboutℹ️
+4x4 sudoku is a simplified version of the 9x9 grid where alot of the puzzles might have multiple solutions
+
 # Features✨
 Uses two main algorithms by completing the rows and the columns depending on the amount of missing numbers
 Works on all 4x4 puzzles where if the puzzle is impossible then it returns this value
@@ -16,3 +19,4 @@ This puzzle would be represented by
 ## |42|31|
 ## |13|42|
 ###### you don't have to add the "|" it is used for demonstration purposes
+
