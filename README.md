@@ -10,8 +10,9 @@ you input each row of the puzzle then press enter to go onto the next row and th
 This puzzle would be represented by 
 (https://www.mathinenglish.com/newpuzzleimages/small/Sudoku4by4Numbers1.gif)
 
-   |  | 3|
-   | 1| 4|
-   |42|31|
-   |13|42|
+ 
+## |  | 3|
+## | 1| 4|
+## |42|31|
+## |13|42|
 ###### you don't have to add the "|" it is used for demonstration purposes
